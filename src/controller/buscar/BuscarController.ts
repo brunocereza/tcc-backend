@@ -1,5 +1,3 @@
-import { STATUS_CODES } from "http";
-import { MessagePort } from "worker_threads";
 import { dbConnection } from "../../db/data-source";
 import { Pessoa } from "../../model/PessoaModel";
 
@@ -10,19 +8,6 @@ class PessoaController {
       nome: nome,
     });
     return retorno;
-  }
-
-  public async insertPessoa(pessoaParam: buscaDTO) {
-    try {
-      const pessoaRepository = dbConnection.getRepository(Pessoa);
-      await pessoaRepository.insert({
-        idade: pessoaParam.idade,
-      });
-    } catch (error) {
-      return error;
-    }
-
-    return;
   }
 }
 
