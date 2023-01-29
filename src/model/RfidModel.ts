@@ -17,4 +17,7 @@ export class Rfid {
 
   @Column("boolean")
   ativo: boolean;
+
+  @Column("int")
+  id_pessoa: number;
 }

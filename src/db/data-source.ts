@@ -1,4 +1,5 @@
 import { DataSource } from "typeorm";
+import { Consumo } from "../model/ConsumoModel";
 import { Pessoa } from "../model/PessoaModel";
 import { Rfid } from "../model/RfidModel";
 const model = "../model";
@@ -10,9 +11,9 @@ export const dbConnection = new DataSource({
   username: "postgres",
   password: "admin",
   database: "tcc",
-  synchronize: true,
+  synchronize: false,
   logging: false,
-  entities: [Pessoa, Rfid],
+  entities: [Pessoa, Rfid, Consumo],
   subscribers: [],
   migrations: [],
 });
